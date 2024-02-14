@@ -1,51 +1,25 @@
-# Kue-Ui-Express
-
+# Kue-Ui-Client
 ## Introduction
-Easy way to mount [Kue-Ui](https://github.com/stonecircle/kue-ui) for Express apps.
+Job management client for [kue](https://github.com/LearnBoost/kue/) (Version `>=0.8.10`)
 
-## Installation
-```
-$ npm install kue-ui-express
-```
+### Important note!
+This repository used to contain instructions on how to enable this new UI for Kue, now it only contains the Ember application itself. To add Kue-Ui to an existing Express application please see [Kue-Ui-Express](https://github.com/stonecircle/kue-ui-express)
 
-## Setup
+## Screenshots
 
-### Mount with Express and Kue
+![Screenshot 1](https://cloud.githubusercontent.com/assets/1458008/5229932/76dd0e70-7716-11e4-9551-e87ce799d8dc.png)
 
-```javascript
-var kue = require('kue');
-var express = require('express');
-var kueUiExpress = require('kue-ui-express');
-var app = express();
-
-kue.createQueue();
-
-kueUiExpress(app, '/kue/', '/kue-api');
-
-// Mount kue JSON api
-app.use('/kue-api/', kue.app);
-
-app.listen(3000);
-```
-
-### Configuration
-
-The example above mounts the Kue-Ui Ember application on the express app at the location `/kue/` and tells the application to point at `/kue-api/` to access the Kue JSON API.
-
-You are also able to enable a simple [Authmaker](https://authmaker.com) based by passing your [Authmaker Ember Simple Auth](https://github.com/Authmaker/authmaker-ember-simple-auth) config as the final argument to the `kueUiExpress()` setup function as follows.
-
-```
-kueUiExpress(app, '/interface', 'https://otherdomain.com/kue-api', {
-  domainUrl: "https://yoursuperapp.authmaker.com",
-  redirectUri: "https://app.yoursuperapp.com/interface/login",
-  clientId: "passDEADBEEFwordDEADBEEFkeyDEADBEEF"
-});
-```
-
-The authmaker config is optional and Kue-Ui will work entirely without Authenticaion/Authorisation if you don't provide it.
+![Screenshot 2](https://cloud.githubusercontent.com/assets/1458008/5229934/7fdf1c84-7716-11e4-8fa3-3d9f3dc947c7.png)
 
 ## Development
-This repo is just a wrapper for wrapping [Kue-Ui](https://github.com/stonecircle/kue-ui) in an Express app. Most develpment will be done on the main Kue-Ui repo.
+
+By just running `npm start` on this repo you will spin up Kue-Ui which will automatically try to connect to a Kue server running at https://localhost:3000/kue-ui
 
 ### License
-`kue-ui-express` is released under the MIT license. See LICENSE.txt for the complete text.
+`kue-ui` is released under the MIT license. See LICENSE.txt for the complete text.
+
+### Contributors
+* [Alex Loizou](https://github.com/alexloi)
+* [Arnaud Benard](https://github.com/arnaudbenard)
+* [Chris Manson](https://github.com/mansona)
+* [Peter Kadlot](https://github.com/daralthus)
