@@ -3,12 +3,12 @@
   "version": "1.2.1",
   "description": "Small description for client goes here",
   "license": "MIT",
-  "author": "Chris Manson <chris@stonecircle.io>",
+  "author": "#",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/stonecircle/kue-ui",
+  "repository": "https://github.com/Jekalo/monitor-ui",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint .",
